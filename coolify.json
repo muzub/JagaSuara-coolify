@@ -1,0 +1,47 @@
+{
+  "name": "JagaSuara",
+  "description": "AI-powered voice monitoring application for maintaining quiet environments",
+  "type": "docker-compose",
+  "repository": {
+    "url": "",
+    "branch": "main"
+  },
+  "compose_file": "coolify.yaml",
+  "environment": {
+    "NODE_ENV": "production",
+    "NEXT_TELEMETRY_DISABLED": "1",
+    "PORT": "3000",
+    "HOSTNAME": "0.0.0.0"
+  },
+  "domains": [
+    {
+      "domain": "${SERVICE_FQDN_APP}",
+      "https": true,
+      "force_https": true
+    }
+  ],
+  "health_check": {
+    "url": "/api/health",
+    "method": "GET",
+    "expected_status": 200
+  },
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": "."
+  },
+  "features": [
+    "AI-powered voice monitoring",
+    "Real-time audio detection",
+    "Customizable thresholds",
+    "Modern UI with shadcn/ui",
+    "Admin configuration panel"
+  ],
+  "tech_stack": [
+    "Next.js 15",
+    "React 18",
+    "TypeScript",
+    "Tailwind CSS",
+    "Google Gemini AI",
+    "Docker"
+  ]
+}

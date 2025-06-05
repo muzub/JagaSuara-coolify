@@ -1,0 +1,39 @@
+services:
+  app:
+    build: .
+    environment:
+      - NODE_ENV=production
+      - NEXT_PUBLIC_APP_URL=https://${SERVICE_FQDN_APP:-localhost:3000}
+      - NEXTAUTH_URL=https://${SERVICE_FQDN_APP:-localhost:3000}
+      - GEMINI_API_KEY=${GEMINI_API_KEY:-}
+      - SERVICE_FQDN_APP=${SERVICE_FQDN_APP:-localhost:3000}
+    labels:
+      # Enable Traefik
+      - traefik.enable=true
+      
+      # HTTP Router (redirect to HTTPS)
+      - traefik.http.routers.jagasuara-http.rule=Host(`${SERVICE_FQDN_APP:-localhost}`)
+      - traefik.http.routers.jagasuara-http.entryPoints=http
+      - traefik.http.routers.jagasuara-http.middlewares=redirect-to-https
+      
+      # HTTPS Router
+      - traefik.http.routers.jagasuara-https.rule=Host(`${SERVICE_FQDN_APP:-localhost}`)
+      - traefik.http.routers.jagasuara-https.entryPoints=https
+      - traefik.http.routers.jagasuara-https.tls=true
+      - traefik.http.routers.jagasuara-https.tls.certresolver=letsencrypt
+      - traefik.http.routers.jagasuara-https.service=jagasuara-service
+      - traefik.http.routers.jagasuara-https.middlewares=gzip
+      
+      # Service
+      - traefik.http.services.jagasuara-service.loadbalancer.server.port=3000
+      
+      # Middleware for GZIP compression
+      - traefik.http.middlewares.gzip.compress=true
+      
+    restart: unless-stopped
+    networks:
+      - coolify
+
+networks:
+  coolify:
+    external: true
