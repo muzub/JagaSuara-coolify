@@ -21,7 +21,7 @@ Thank you for your interest in contributing to JagaSuara! This document provides
 ### Local Development
 ```bash
 # Clone your fork
-git clone https://github.com/yourusername/JagaSuara-coolify.git
+git clone https://github.com/muzub/JagaSuara-coolify.git
 cd JagaSuara-coolify
 
 # Install dependencies

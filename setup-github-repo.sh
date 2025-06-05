@@ -37,7 +37,7 @@ fi
 if ! git remote | grep -q "origin"; then
     echo -e "${YELLOW}⚠️  No GitHub remote configured${NC}"
     echo -e "${BLUE}Please add your GitHub repository as origin:${NC}"
-    echo -e "${YELLOW}   git remote add origin https://github.com/yourusername/JagaSuara-coolify.git${NC}"
+    echo -e "${YELLOW}   git remote add origin https://github.com/muzub/JagaSuara-coolify.git${NC}"
     echo ""
 else
     origin_url=$(git remote get-url origin)
@@ -185,7 +185,7 @@ echo -e "${BLUE}Next steps:${NC}"
 echo -e "1. ${YELLOW}git add .${NC}"
 echo -e "2. ${YELLOW}git commit -m \"Initial commit: JagaSuara Coolify edition\"${NC}"
 echo -e "3. ${YELLOW}git branch -M main${NC}"
-echo -e "4. ${YELLOW}git remote add origin https://github.com/yourusername/JagaSuara-coolify.git${NC}"
+echo -e "4. ${YELLOW}git remote add origin https://github.com/muzub/JagaSuara-coolify.git${NC}"
 echo -e "5. ${YELLOW}git push -u origin main${NC}"
 
 echo ""

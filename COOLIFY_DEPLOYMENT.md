@@ -4,7 +4,7 @@
 ## Application Information
 - **Name**: JagaSuara
 - **Type**: Next.js Application
-- **Domain**: js.elib.my.id
+- **Domain**: your-domain.com (replace with your actual domain)
 - **Port**: 3000
 - **Build Pack**: Docker
 
@@ -14,8 +14,8 @@ NODE_ENV=production
 NEXT_TELEMETRY_DISABLED=1
 PORT=3000
 HOSTNAME=0.0.0.0
-SERVICE_FQDN_APP=js.elib.my.id
-NEXT_PUBLIC_APP_URL=https://js.elib.my.id
+SERVICE_FQDN_APP=your-domain.com
+NEXT_PUBLIC_APP_URL=https://your-domain.com
 ```
 
 ## Coolify Setup Instructions
@@ -33,14 +33,14 @@ NEXT_PUBLIC_APP_URL=https://js.elib.my.id
 - **Docker Compose File**: `coolify.yaml`
 
 ### 3. Domain Configuration
-- **Domain**: js.elib.my.id
+- **Domain**: your-domain.com (configure with your actual domain)
 - **HTTPS**: Enabled (Let's Encrypt)
 - **Force HTTPS**: Yes
 
 ### 4. Environment Variables
 Set the following environment variables in Coolify:
-- `SERVICE_FQDN_APP`: js.elib.my.id
-- `NEXT_PUBLIC_APP_URL`: https://js.elib.my.id
+- `SERVICE_FQDN_APP`: your-domain.com
+- `NEXT_PUBLIC_APP_URL`: https://your-domain.com
 
 ### 5. Network Configuration
 - Ensure the application is connected to the `coolify` network
@@ -67,7 +67,7 @@ Set the following environment variables in Coolify:
 - **SSL**: Let's Encrypt automatic certificates
 
 ## Deployment Status
-✅ Application successfully deployed and accessible at https://js.elib.my.id
+✅ Application successfully deployed and accessible at https://your-domain.com
 ✅ SSL certificate configured via Let's Encrypt
 ✅ Health endpoint responding correctly
 ✅ Admin panel accessible at /admin

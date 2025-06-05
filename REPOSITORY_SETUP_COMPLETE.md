@@ -92,8 +92,8 @@ git commit -m "🎉 Initial commit: JagaSuara Coolify edition
 # Set main branch
 git branch -M main
 
-# Add remote (replace 'yourusername' with your GitHub username)
-git remote add origin https://github.com/yourusername/JagaSuara-coolify.git
+# Add remote (replace 'muzub' with your GitHub username if you fork this repo)
+git remote add origin https://github.com/muzub/JagaSuara-coolify.git
 
 # Push to GitHub
 git push -u origin main
